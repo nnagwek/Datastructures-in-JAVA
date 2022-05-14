@@ -16,7 +16,7 @@ public class AnagramProblem {
 	 */
 
 	public static void main(String[] args) {
-		
+
 		System.out.println(anagramTester("restful", "fluster"));
 		System.out.println(anagramTester("restful", "fluster12"));
 
@@ -29,14 +29,17 @@ public class AnagramProblem {
 		// Case 1 if lengths do not match then return false
 		if (arr1.length != arr2.length)
 			return false;
-
+		// O(NlogN)
 		Arrays.sort(arr1);
 		Arrays.sort(arr2);
 
+		// O(N)
 		for (int i = 0; i < arr1.length; i++) {
 			if (arr1[i] != arr2[i])
 				return false;
 		}
+		
+		// total =  O(NlogN) + O(N) = O(NlogN)
 
 		return true;
 	}
